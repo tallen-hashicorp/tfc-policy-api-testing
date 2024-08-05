@@ -1,5 +1,5 @@
 # TFC Policy API Testing
-This repository is for testing some TFC (Terraform Cloud) API calls related to policies.
+This repository is for testing some TFC API calls related to policies.
 
 ## Prerequisites
 Before you start, make sure you have the following:
