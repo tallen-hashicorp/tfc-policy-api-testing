@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": "****",
+      "type": "policy-sets",
+      "attributes": {
+        "name": "massive-policy-set",
+        "description": null,
+        "global": true,
+        "workspace-count": 1,
+        "project-count": 0,
+        "created-at": "2024-08-05T20:18:17.461Z",
+        "updated-at": "2024-08-05T20:18:17.461Z",
+        "kind": "sentinel",
+        "agent-enabled": false,
+        "policy-count": 2,
+        "versioned": false
+      },
+      "relationships": {
+        "organization": {
+          "data": {
+            "id": "****",
+            "type": "organizations"
+          }
+        },
+        "policies": {
+          "data": [
+            {
+              "id": "****",
+              "type": "policies"
+            },
+            {
+              "id": "****",
+              "type": "policies"
+            }
+          ]
+        },
+        "workspace-exclusions": {
+          "data": []
+        }
+      },
+      "links": {
+        "self": "/api/v2/policy-sets/****"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://app.terraform.io/api/v2/organizations/****/policy-sets?page%5Bnumber%5D=1&page%5Bsize%5D=20",
+    "first": "https://app.terraform.io/api/v2/organizations/****/policy-sets?page%5Bnumber%5D=1&page%5Bsize%5D=20",
+    "prev": null,
+    "next": null,
+    "last": "https://app.terraform.io/api/v2/organizations/****/policy-sets?page%5Bnumber%5D=1&page%5Bsize%5D=20"
+  },
+  "meta": {
+    "pagination": {
+      "current-page": 1,
+      "page-size": 20,
+      "prev-page": null,
+      "next-page": null,
+      "total-pages": 1,
+      "total-count": 1
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "data": {
+    "id": "****",
+    "type": "policies",
+    "attributes": {
+      "name": "restrict-aws-instances-type-and-tag",
+      "description": null,
+      "enforce": [
+        {
+          "path": "restrict-aws-instances-type-and-tag.sentinel",
+          "mode": "soft-mandatory"
+        }
+      ],
+      "policy-set-count": 1,
+      "updated-at": "2024-08-05T20:30:40.409Z",
+      "kind": "sentinel",
+      "enforcement-level": "soft-mandatory"
+    },
+    "relationships": {
+      "organization": {
+        "data": {
+          "id": "****",
+          "type": "organizations"
+        }
+      },
+      "policy-sets": {
+        "data": [
+          {
+            "id": "****",
+            "type": "policy-sets"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "/api/v2/policies/****",
+      "upload": "/api/v2/policies/****/upload",
+      "download": "/api/v2/policies/****/download"
+    }
+  }
+}
