@@ -1,62 +1,69 @@
-# tfc-policy-api-testing
-Testing some TFC API Calls
+# TFC Policy API Testing
+This repository is for testing some TFC (Terraform Cloud) API calls related to policies.
 
-## Set Token
-* Login to TFC
-* Click User icon (Top Right) and select Account Settings
-* Select Tokens
-* Click Create an API token
-* Copy the token
-* Run the following command replacing `my-token` with your token
-* `export TOKEN=my-token``
+## Prerequisites
+Before you start, make sure you have the following:
+- Terraform Cloud account
+- jq installed for processing JSON responses
 
-## Select the org
-In order for the following commands to work you need to set your organizations name as an envrioment variable, run the folllowing replacing `my-org` with your org name
+## Set Up Your API Token
+1. Login to TFC.
+2. Click on the user icon (Top Right) and select **Account Settings**.
+3. Navigate to **Tokens**.
+4. Click **Create an API token**.
+5. Copy the generated token.
+6. Run the following command, replacing `my-token` with your actual token:
+    ```bash
+    export TOKEN=my-token
+    ```
+
+## Set Your Organization
+To ensure the following commands work, set your organization's name as an environment variable. Replace `my-org` with your organization's name:
 ```bash
 export ORG=my-org
 ```
 
-## Get Policy Set
-This also shows the polices included in the set however only thir ID and type
+## API Commands
+
+### Get Policy Set
+Retrieve the policy set for your organization. This command also shows the policies included in the set, but only their ID and type.
 ```bash
 curl \
-  -k \
   --header "Authorization: Bearer $TOKEN" \
   https://app.terraform.io/api/v2/organizations/$ORG/policy-sets | jq
 ```
+[Example Output](example_outputs/get_policy_set.json)
 
-[example output](example_outputs/get_policy_set.json)
 
-## Get Policy Set with policies included
-This has an extra field included which contains all the polices
+
+### Get Policy Set with Policies Included
+Retrieve the policy set with an extra field that contains all the policies.
 ```bash
 curl \
-  -k \
   --header "Authorization: Bearer $TOKEN" \
   https://app.terraform.io/api/v2/organizations/$ORG/policy-sets?include=policies | jq
 ```
+[Example Output](example_outputs/get_policy_set_include_policies.json)
 
-[example output](example_outputs/get_policy_set_include_policies.json)
 
-## Get Policy
-This lists all policies in an org
+
+### Get All Policies
+List all policies in your organization.
 ```bash
 curl \
-  -k \
   --header "Authorization: Bearer $TOKEN" \
   https://app.terraform.io/api/v2/organizations/$ORG/policies | jq
 ```
+[Example Output](example_outputs/get_policy.json)
 
-[example output](example_outputs/get_policy.json)
 
-## Get a policy based on ID
-Replace `policy_id` with your policy id. 
+
+### Get a Policy by ID
+Retrieve a specific policy based on its ID. Replace `policy_id` with your actual policy ID.
 ```bash
 export POLICY_ID=policy_id
 curl \
-  -k \
   --header "Authorization: Bearer $TOKEN" \
   https://app.terraform.io/api/v2/policies/$POLICY_ID | jq
 ```
-
-[example output](example_outputs/policy.json)
+[Example Output](example_outputs/policy.json)
